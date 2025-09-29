@@ -1,0 +1,490 @@
+/* Samsung InterFace font import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Employee Details Form Container */
+.employee-details-form-container {
+  background: transparent;
+  padding: 20px;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+  width: 100%;
+}
+
+/* Form Header */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0;
+  border-bottom: none;
+}
+
+.form-title {
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202224;
+  margin: 0;
+}
+
+.note-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.note-svg {
+  width: 29px;
+  height: 34px;
+}
+
+.note-label {
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif !important;
+  font-size: 12px;
+  font-weight: 700 !important;
+  color: #6b7280;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Form Styling */
+.employee-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Label Styling */
+.form-label {
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px;
+  line-height: 18px;
+  color: #374151;
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+/* Input Field Styling */
+.form-input,
+.form-select {
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif !important;
+  font-size: 14px;
+  line-height: 20px;
+  color: #374151;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Readonly input fields - gray background */
+.readonly-input {
+  background-color: #f3f3f3 !important;
+  cursor: not-allowed;
+}
+
+/* White background input fields */
+.white-input {
+  background-color: #ffffff !important;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+.form-select {
+  cursor: pointer;
+  /* Use shorthand to force the SVG to render at 20x20 and positioned on the right */
+  background: url("../assets/svg/dropdown.svg") no-repeat right 12px center /
+    20px 20px;
+  padding-right: 40px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* White background select fields */
+.form-select.white-input {
+  background-color: #ffffff !important;
+  /* ensure white selects also use the enlarged dropdown icon */
+  background: url("../assets/svg/dropdown.svg") no-repeat right 12px center /
+    20px 20px;
+}
+
+/* Disabled select fields maintain font weight */
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+  font-weight: 400 !important;
+  color: #374151 !important;
+}
+
+/* Disabled input fields maintain font weight */
+.form-input:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+  font-weight: 400 !important;
+  color: #374151 !important;
+}
+
+/* Delivery Confirmation Checkbox - GA Approval Route Only */
+.delivery-confirmation-container {
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #f9fafb;
+  padding: 16px 0;
+}
+
+.delivery-checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: not-allowed;
+  justify-content: flex-start;
+  padding: 0;
+  margin-left: 0;
+}
+
+/* Specific styling for delivery confirmation checkbox */
+.delivery-checkbox-group .checkbox-input {
+  background-color: #838383;
+  border-color: #838383;
+}
+
+.delivery-checkbox-group .checkbox-input:checked {
+  background-color: #838383;
+  border-color: #838383;
+}
+
+/* Stronger overrides to ensure the delivery confirmation checkbox shows the exact grey color
+   even when other checkbox rules (like :checked) are defined later. Use higher specificity
+   and !important to defeat browser/user-agent/defaults. */
+.delivery-confirmation-container .delivery-checkbox-group .checkbox-input,
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:checked,
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:disabled,
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:disabled:checked {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-color: #838383 !important;
+  border-color: #838383 !important;
+  box-shadow: none !important;
+  opacity: 1 !important; /* keep it fully visible */
+}
+
+/* Ensure the checkmark remains visible when checked */
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:checked::after {
+  color: #ffffff !important;
+}
+
+/* Specific overrides to restore the previous grey color (#838383) for the
+   Include Kannada Address and Display in Card checkboxes (by id). These
+   rules are intentionally specific so they don't interfere with the
+   delivery-confirmation styles or the global checkbox rules. */
+#kannadaAddress.checkbox-input,
+#displayInCardDesignation.checkbox-input,
+#kannadaAddress.checkbox-input:checked,
+#displayInCardDesignation.checkbox-input:checked,
+#kannadaAddress.checkbox-input:disabled,
+#displayInCardDesignation.checkbox-input:disabled,
+#kannadaAddress.checkbox-input:disabled:checked,
+#displayInCardDesignation.checkbox-input:disabled:checked {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-color: #838383 !important;
+  border-color: #838383 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Ensure the checkmark for these two checkboxes is white and centered */
+#kannadaAddress.checkbox-input:checked::after,
+#displayInCardDesignation.checkbox-input:checked::after {
+  color: #ffffff !important;
+}
+
+.delivery-checkbox-label {
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif !important;
+  font-size: 14px;
+  font-weight: 400 !important;
+  color: #374151;
+  cursor: not-allowed;
+  user-select: none;
+  line-height: 18px;
+  opacity: 1;
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  justify-content: right;
+}
+
+.checkbox-input {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  position: relative;
+  margin: 0;
+}
+
+.checkbox-input:checked {
+  background-color: #39aee1;
+  border-color: #39aee1;
+}
+
+.checkbox-input:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: 700 !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Disabled checkbox styles for GA approval route */
+.checkbox-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.checkbox-input:disabled:checked {
+  background-color: #838383;
+  border-color: #838383;
+}
+
+.checkbox-input:disabled + .checkbox-label {
+  cursor: not-allowed;
+  opacity: 1;
+  font-weight: 400 !important;
+}
+
+.checkbox-label {
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif !important;
+  font-size: 14px;
+  font-weight: 400 !important;
+  color: #374151;
+  cursor: pointer;
+  user-select: none;
+  line-height: 18px;
+  padding-top: 5px;
+}
+
+/* Special styling for Display in Card checkbox */
+.display-card {
+  margin-left: auto;
+  margin-right: 0;
+  align-self: flex-end;
+}
+
+.display-checkbox {
+  accent-color: #39aee1;
+}
+
+.display-label {
+  font-weight: 400 !important;
+  color: #374151;
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .display-card {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+}
+
+/* Remove any default margins and padding */
+* {
+  box-sizing: border-box;
+}
+
+/* Samsung InterFace font fallback */
+@font-face {
+  font-family: "Samsung InterFace";
+  src: local("Samsung InterFace"), local("Inter"), local("Arial"), sans-serif;
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+/* Submit Button Container */
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 25px;
+  padding-right: 0;
+}
+
+/* Submit Button */
+.employee-submit-button {
+  width: 90px;
+  height: 38px;
+  background-color: #38aee0;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.employee-submit-button:hover {
+  background-color: #2a9bc7;
+}
+
+.employee-submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 174, 224, 0.3);
+}
+
+/* GA Approval Buttons Container */
+.approval-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  margin-top: 25px;
+  padding-right: 0;
+}
+
+/* Reject Button */
+.reject-button {
+  width: 90px;
+  height: 38px;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #38aee0;
+  border-radius: 6px;
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reject-button:hover {
+  background-color: #f9fafb;
+  border-color: #38aee0;
+}
+
+.reject-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 174, 224, 0.3);
+}
+
+/* Approve Button */
+.approve-button {
+  width: 90px;
+  height: 38px;
+  background-color: #38aee0;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.approve-button:hover {
+  background-color: #2a9bc7;
+}
+
+.approve-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 174, 224, 0.3);
+}

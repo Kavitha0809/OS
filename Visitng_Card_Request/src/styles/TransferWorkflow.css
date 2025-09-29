@@ -1,0 +1,37 @@
+/* Transfer Workflow Component Styles */
+.transfer-workflow-container {
+  width: calc(100% + 40px);
+  background-color: #eff6ff;
+  padding: 12px 36px;
+  margin-top: 30px;
+  margin-left: -20px;
+  margin-right: -20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.transfer-workflow-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transfer-workflow-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.transfer-workflow-text {
+  font-family: "Inter", "Samsung InterFace", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.transfer-workflow-arrow {
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,63 @@
+/* Visiting Card Preview Container */
+.visiting-card-preview-container {
+  background-color: #eff6ff;
+  width: 1089px;
+  height: 337px;
+  border-radius: 12px;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-bottom: 24px;
+  padding-left: 20px;
+  margin-top: 16px;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.card-preview-inner {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-image {
+  flex: 1;
+  max-width: 600px;
+  min-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-preview-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card-image {
+    max-width: 100%;
+  }
+
+  .visiting-card-preview-container {
+    padding: 12px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-img {
+    max-height: 150px;
+  }
+}
