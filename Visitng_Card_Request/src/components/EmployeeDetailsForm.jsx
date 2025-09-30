@@ -12,6 +12,7 @@ const EmployeeDetailsForm = () => {
   const isKannadaRoute = location.pathname === "/cardrequestkannada";
   const isGaApprovalRoute = location.pathname === "/gaapproval";
   const isReportRoute = location.pathname === "/report";
+  const isCardRequestRoute = location.pathname === "/cardrequest";
 
   const [formData, setFormData] = useState({
     employeeName: "Murali Mukhi Illam",
@@ -21,8 +22,14 @@ const EmployeeDetailsForm = () => {
     knoxId: "Murali@Samsung.com",
     mobileNo: "+61-432-753-202",
     noOfCards: "50",
-    includeKannadaAddress: isKannadaRoute || isGaApprovalRoute || isReportRoute, // Default checked for Kannada route, GA approval, and report
-    displayInCardDesignation: isGaApprovalRoute ? true : true, // Always checked for GA approval
+    // Default checked for Kannada route, GA approval, and report. For /cardrequest we explicitly default to false.
+    includeKannadaAddress: isCardRequestRoute
+      ? false
+      : isKannadaRoute || isGaApprovalRoute || isReportRoute,
+    // Display in card should be checked for GA approval, /cardrequest, and /cardrequestkannada routes
+    // For /report, make designation and kannada defaults checked; department remains false
+    displayInCardDesignation:
+      isGaApprovalRoute || isCardRequestRoute || isKannadaRoute || isReportRoute,
     displayInCardDepartment: false,
     deliveryConfirmation: isGaApprovalRoute, // Default checked for GA approval route only
   });
@@ -41,7 +48,11 @@ const EmployeeDetailsForm = () => {
   };
 
   return (
-    <div className="employee-details-form-container">
+    <div
+      className={`employee-details-form-container ${
+        isCardRequestRoute ? "cardrequest-route" : ""
+      } ${isReportRoute ? "report-route" : ""}`}
+    >
       <div className="form-header">
         <h2 className="form-title">Employee Details</h2>
         <div className="note-icon">
@@ -88,7 +99,7 @@ const EmployeeDetailsForm = () => {
                 onChange={handleInputChange}
                 className="checkbox-input"
                 id="displayInCardDesignation"
-                disabled={isGaApprovalRoute}
+                disabled={isGaApprovalRoute || isReportRoute}
               />
               <label
                 htmlFor="displayInCardDesignation"
@@ -120,7 +131,7 @@ const EmployeeDetailsForm = () => {
                 onChange={handleInputChange}
                 className="checkbox-input"
                 id="displayInCardDepartment"
-                disabled={isGaApprovalRoute}
+                disabled={isGaApprovalRoute || isReportRoute}
               />
               <label
                 htmlFor="displayInCardDepartment"
@@ -219,7 +230,7 @@ const EmployeeDetailsForm = () => {
                 onChange={handleInputChange}
                 className="checkbox-input"
                 id="kannadaAddress"
-                disabled={isGaApprovalRoute}
+                disabled={isGaApprovalRoute || isReportRoute}
               />
               <label htmlFor="kannadaAddress" className="checkbox-label">
                 Include Kannada Address

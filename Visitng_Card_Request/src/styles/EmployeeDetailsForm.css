@@ -227,14 +227,18 @@
    Include Kannada Address and Display in Card checkboxes (by id). These
    rules are intentionally specific so they don't interfere with the
    delivery-confirmation styles or the global checkbox rules. */
-#kannadaAddress.checkbox-input,
-#displayInCardDesignation.checkbox-input,
-#kannadaAddress.checkbox-input:checked,
-#displayInCardDesignation.checkbox-input:checked,
-#kannadaAddress.checkbox-input:disabled,
-#displayInCardDesignation.checkbox-input:disabled,
-#kannadaAddress.checkbox-input:disabled:checked,
-#displayInCardDesignation.checkbox-input:disabled:checked {
+/* Keep GA approval and delivery confirmation grey. These selectors target elements
+   inside the delivery-confirmation container or when disabled on GA approval route. */
+.delivery-confirmation-container .delivery-checkbox-group .checkbox-input,
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:checked,
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:disabled,
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:disabled:checked {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
@@ -244,9 +248,10 @@
   opacity: 1 !important;
 }
 
-/* Ensure the checkmark for these two checkboxes is white and centered */
-#kannadaAddress.checkbox-input:checked::after,
-#displayInCardDesignation.checkbox-input:checked::after {
+/* Ensure the checkmark for delivery-confirmation is white */
+.delivery-confirmation-container
+  .delivery-checkbox-group
+  .checkbox-input:checked::after {
   color: #ffffff !important;
 }
 
@@ -487,4 +492,45 @@
 .approve-button:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(56, 174, 224, 0.3);
+}
+
+/* Route-specific styles for /cardrequest: use #39AEE1 for focus and checked states */
+.cardrequest-route .form-input:focus,
+.cardrequest-route .form-select:focus {
+  outline: none;
+  border-color: #39aee1;
+  box-shadow: 0 0 0 1px rgba(57, 174, 225, 0.2);
+}
+
+.cardrequest-route .checkbox-input:checked {
+  background-color: #39aee1;
+  border-color: #39aee1;
+}
+
+.cardrequest-route .employee-submit-button:focus,
+.cardrequest-route .reject-button:focus,
+.cardrequest-route .approve-button:focus {
+  box-shadow: 0 0 0 2px rgba(57, 174, 225, 0.3);
+}
+
+/* Route-specific styles for /report: make the two specific checkboxes grey with white checkmark */
+/* On /report, only style the Designation and Kannada checkboxes as grey when checked and disabled */
+.report-route #kannadaAddress.checkbox-input:disabled,
+.report-route #displayInCardDesignation.checkbox-input:disabled {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-color: #838383 !important;
+  border-color: #838383 !important;
+}
+
+.report-route #kannadaAddress.checkbox-input:disabled:checked,
+.report-route #displayInCardDesignation.checkbox-input:disabled:checked {
+  background-color: #838383 !important;
+  border-color: #838383 !important;
+}
+
+.report-route #kannadaAddress.checkbox-input:disabled::after,
+.report-route #displayInCardDesignation.checkbox-input:disabled:checked::after {
+  color: #ffffff !important;
 }
