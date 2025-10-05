@@ -1,0 +1,24 @@
+/* Samsung InterFace helper class and safe overrides for form controls */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "Samsung InterFace";
+  src: local("Samsung InterFace"), local("Inter"), local("Arial"), sans-serif;
+  font-display: swap;
+  font-weight: 400 800;
+}
+
+/* Utility: apply Samsung InterFace bold to normal text */
+.samsung-text {
+  font-family: "Samsung InterFace", Arial, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Keep form controls at normal weight for readability */
+.samsung-text input,
+.samsung-text select,
+.samsung-text textarea,
+.samsung-text button {
+  font-weight: 400 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+}

@@ -5,7 +5,7 @@ import EmployeeProfile from "./EmployeeProfile";
 import RequiredInfo from "./RequiredInfo";
 import VisitingCard from "./VisitingCard";
 
-const Gaapproval = () => {
+const PHsubmit = () => {
   const employeeData = {
     initials: "MK",
     name: "Manoj Kandan M",
@@ -35,4 +35,4 @@ const Gaapproval = () => {
   );
 };
 
-export default Gaapproval;
+export default PHsubmit;

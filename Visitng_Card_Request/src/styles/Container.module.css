@@ -1,0 +1,68 @@
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1600px;
+  margin: 16px auto; /* center horizontally */
+  margin-left:10px;
+}
+
+.header {
+  font-family: "Inter", "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #202224;
+  margin-bottom: 12px;
+}
+
+.employeeBox {
+  background: #EFF6FF; /* light blue */
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: grid;
+  /* left column wider like the screenshot */
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  gap: 0;
+  box-shadow: 0 1px 0 rgba(2,6,23,0.03);
+}
+
+.infoItem {
+  padding: 12px 20px;
+}
+
+.right {
+  /* a little extra padding on the left to visually separate */
+  padding-left: 200px;
+}
+
+.infoItem + .infoItem {
+  border-left: 1px solid rgba(13,30,50,0.06); /* subtle divider */
+}
+
+.label {
+  font-family: "Inter", "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #202224;
+  margin-bottom: 8px;
+}
+.value {
+  font-family: "Inter", "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333 !important;
+  /* ensure this value text is not bold (override any global .info-value rules) */
+  font-weight: 400 !important;
+}
+/* Responsive adjustments */
+@media (max-width: 720px) {
+  .employeeBox {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
+
+  .infoItem + .infoItem {
+    border-left: none;
+    border-top: 1px solid rgba(13,30,50,0.06);
+    margin-top: 8px;
+    padding-top: 12px;
+  }
+}

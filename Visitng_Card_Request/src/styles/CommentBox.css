@@ -15,25 +15,22 @@
   line-height: 145%;
   letter-spacing: 0%;
   vertical-align: middle;
-  color: #374151;
+  color: #101928;
   margin: 0 0 6px 0;
 }
 
 /* Comment Box Container */
 .comment-box-container {
   width: 100%;
-  max-width: 1500px;
+  max-width: 2800px;
   height: 90px;
   opacity: 1;
   border-radius: 6px;
   border: 0.5px solid #d1d5db;
-  padding-right: 16px;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-top: 16px;
   box-sizing: border-box;
   background-color: #ffffff;
   position: relative;
+  padding: 0;
 }
 
 /* Comment Input Field */
@@ -44,15 +41,26 @@
   outline: none;
   resize: none;
   background: transparent;
-  font-family: "Samsung InterFace", "Inter", Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-weight: normal;
   font-style: normal;
   font-size: 14px;
+  padding: 16px;
+  color: #101928;
+}
+
+.comment-input::placeholder {
+  color: #101928;
+  font-family: "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  opacity: 1;
+  color: #000000;
+  line-height: 1.5;;
   line-height: 145%;
   letter-spacing: 0%;
-  color: #374151;
   box-sizing: border-box;
-  padding: 18px 0 0 0;
+  padding: 16px;
   margin: 0;
   text-align: left;
   vertical-align: top;

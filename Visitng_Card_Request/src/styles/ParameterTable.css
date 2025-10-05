@@ -1,0 +1,145 @@
+.performance-parameter {
+  background: #EFF6FF;
+  padding: 12px 16px;
+  font-family: "Inter", "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #101928;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: 1px solid #D0D5DD;
+}
+
+.performance-icon {
+  font-size: 20px;
+  line-height: 1;
+   font-size: 16px;
+  font-weight: bold;
+  color: #434343;
+}
+
+.parameter-table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #D0D5DD;
+border: 1px solid #D0D5DD;
+
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 0; /* remove vertical separators between header columns */
+  background: transparent;
+  border-bottom: 1px solid #D0D5DD;
+}
+
+.header-cell {
+  padding: 12px 16px;
+  font-family: "Inter", "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #202224;
+  background: #EFF6FF;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 0; /* remove vertical separators between columns */
+  background: transparent;
+ 
+}
+
+.cell {
+  padding: 12px 16px;
+  font-family: "Inter", "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  color: #101928;
+  font-weight: 400;
+  background: #FFFFFF;
+}
+
+/* horizontal separator between rows */
+.table-row .cell {
+  border-bottom: 1px solid #D0D5DD;
+}
+
+/* remove bottom border for the last data row to avoid double line before sum */
+.table-row:last-of-type .cell {
+  border-bottom: none;
+}
+
+/* keep sum-row free of horizontal separators */
+.sum-row .cell {
+  border-bottom: none !important;
+}
+
+.sum-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  background: #EFF6FF !important;
+  font-family: "Inter", "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  padding: 5px 16px;
+  border-bottom: none !important;
+  position: relative;
+  margin-top: -24px;
+}
+
+.sum-row .cell {
+  border: none !important;
+  background: #EFF6FF !important;
+}
+
+.sum-label {
+  text-align: right;
+  color: #101928;
+  font-size: 14px;
+  font-weight: bold;
+  border: none !important;
+}
+
+.sum-value {
+  color: #101928;
+  font-size: 14px;
+  font-weight: bold;
+  border: none !important;
+}
+
+/* Combined sum block styles - place two blocks under the two middle columns */
+.sum-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0; /* remove space between label and value */
+  background: #EFF6FF !important;
+  padding: 8px 0;
+  border: none;
+}
+
+.sum-block.left {
+  grid-column: 2 / 3; /* center under Weightage column */
+  justify-self: center;
+  /* small visual nudge to the left so the block sits more under the Weightage column */
+  transform: translateX(-150px);
+}
+
+.sum-block.right {
+  grid-column: 3 / 4; /* center under RM Weightage column */
+  justify-self: center;
+
+  /* small visual nudge to the right so the block sits more under the RM Weightage column */
+  transform: translateX(-140px);
+}
+
+.sum-block .sum-label,
+.sum-block .sum-value {
+  font-weight: 700;
+  color: #101928;
+}
+

@@ -5,7 +5,7 @@ import EmployeeProfile from "./EmployeeProfile";
 import RequiredInfo from "./RequiredInfo";
 import VisitingCard from "./VisitingCard";
 
-const Avatars = () => {
+const EmployeeSubmit = () => {
   const employeeData = {
     initials: "MK",
     name: "Manoj Kandan M",
@@ -39,4 +39,4 @@ const Avatars = () => {
   );
 };
 
-export default Avatars;
+export default EmployeeSubmit;
