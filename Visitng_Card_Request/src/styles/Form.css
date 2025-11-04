@@ -14,6 +14,16 @@
   margin-bottom: 16px;
 }
 
+/* Align form sections slightly to the right so they line up with the
+   "Employee Details" header used in the container above. Adjust the
+   left offset value if you want finer tuning. */
+.form-legend,
+.parameter-rating-header,
+.rating-row,
+.comment-box-wrapper {
+  margin-left: 10px;
+}
+
 
 
 .employee-details {
@@ -203,6 +213,13 @@
 .rating-buttons {
   display: flex;
   gap: 12px;
+  /* small nudge to the right so the button box doesn't sit too close to the select */
+  margin-left: 10px;
+}
+
+/* Move only the Save as Draft button slightly to the right for better spacing */
+.rating-buttons .outline-btn {
+  margin-left: 10px;
 }
 
 .primary-btn {

@@ -23,7 +23,7 @@ const PHsubmit = () => {
     <div className="avatars-container">
       <Header
         breadcrumb="My Workspace > Visiting Card Request"
-        title="Visiting Card - Card Request"
+        title="OS Resource Evaluation - PH Submit"
       />
 
       <EmployeeProfile employee={employeeData} />

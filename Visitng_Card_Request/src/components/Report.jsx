@@ -23,7 +23,7 @@ const Report = () => {
     <div className="avatars-container">
       <Header
         breadcrumb="My Workspace > Visiting Card Request"
-        title="Visiting Card - Card Request"
+        title="OS Resource Evaluation - Report"
       />
 
       <EmployeeProfile employee={employeeData} />

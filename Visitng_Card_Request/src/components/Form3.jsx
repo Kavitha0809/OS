@@ -2,28 +2,16 @@ import React from "react";
 import "../styles/Form.css";
 import "../styles/SamsungFont.css";
 import "../styles/ParameterTable.css";
+import CommentBox from "./CommentBox";
+import TransferWorkflow from "./TransferWorkflow";
 import { Add } from "@mui/icons-material";
+import AdditionalComment from "./AdditionalComment";
 import "../styles/ParameterTable.css"
+import Container from "./Container";
 const Form3 = () => {
   return (
   <div className="form-wrapper samsung-text">
-      <div className="employee-details">
-        <div className="employee-details-header">Employee Details</div>
-
-        <div className="employee-details-box">
-          <div className="info-row">
-            <div className="info-item">
-              <div className="info-label">Employee Name</div>
-              <div className="info-value">Somashree Nandy</div>
-            </div>
-
-            <div className="info-item info-item-right">
-              <div className="info-label">Date of Joining</div>
-              <div className="info-value">10-Oct-2024</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Container initialName="Somashree Nandy" initialDOJ="10-Oct-2024" />
         <p className="form-legend">
           <strong>Legend</strong>
           <span className="legend-dash"> - </span>
@@ -100,15 +88,23 @@ const Form3 = () => {
             <div className="cell">xxx-xxxx-xxxxxxxxxxx-xxxxxxxxxxxxxxx-xxxxxx</div>
           </div>
 </div>
-          <div className="table-row sum-row" style={{ borderBottom: "none" }}>
-            <div className="sum-label cell label1" style={{ borderBottom: "none" }}>Sum=</div>
-            <div className="sum-value cell value1">100</div>
-            <div className="sum-label cell label2" style={{ borderBottom: "none" }}>Sum=</div>
-            <div className="sum-value cell value2">60</div>
+          <div className="table-row sum-row">
+            {/* Left sum block centered under second column */}
+            <div className="sum-block left cell">
+              <span className="sum-label">Sum=</span>
+              <span className="sum-value">100</span>
+            </div>
+
+            {/* Right sum block centered under third column */}
+            <div className="sum-block right cell">
+              <span className="sum-label">Sum=</span>
+              <span className="sum-value">60</span>
+            </div>
 
           </div>
-      </div>  
-);
+      
+    </div>
+  );
 };
 
 export default Form3;
